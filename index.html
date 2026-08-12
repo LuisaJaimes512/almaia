@@ -4,17 +4,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ALMAIA - Comunidad Empresarial Femenina</title>
-<script>
-  // Aplica el tema guardado antes del primer render para evitar parpadeos
-  (function () {
-    const forced = new URLSearchParams(location.search).get("theme");
-    const saved = forced || localStorage.getItem("almaia-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (saved ? saved === "dark" : prefersDark) {
-      document.documentElement.classList.add("dark");
-    }
-  })();
-</script>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&amp;family=Poppins:wght@400;500;700&amp;family=Raleway:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -23,23 +12,31 @@
 <style>
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 120px;
+            scroll-padding-top: 136px;
         }
         @media (min-width: 768px) {
             html {
-                scroll-padding-top: 140px;
+                scroll-padding-top: 156px;
             }
         }
-        .dark body {
-            background-image: linear-gradient(180deg, rgba(233, 213, 162, 0.10) 0%, rgba(49, 48, 47, 0.02) 100%);
+        header {
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #CDAE82, #6E5836, #CDAE82) 1;
         }
         .dark header {
-            background: #3A342C;
-            border-bottom: 1px solid rgba(233, 213, 162, 0.24);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+            background: #6B5335;
+            border-image: linear-gradient(90deg, #E9D5A2, #6E5836, #E9D5A2) 1;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
         }
-        .dark main {
-            background: linear-gradient(180deg, rgba(233, 213, 162, 0.04) 0%, transparent 100%);
+        .gradient-border-t {
+            border-top: 3px solid transparent;
+            border-image: linear-gradient(90deg, #CDAE82, #6E5836, #CDAE82) 1;
+        }
+        .dark .gradient-border-t {
+            border-image: linear-gradient(90deg, #E9D5A2, #6E5836, #E9D5A2) 1;
+        }
+        body {
+            background: #FFFFFF;
         }
         .glass-nav {
             backdrop-filter: blur(20px);
@@ -114,25 +111,21 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </head>
-<body class="bg-background dark:bg-dark-bg text-on-background dark:text-dark-text font-body-md text-body-md antialiased selection:bg-soft-gold selection:text-white transition-colors duration-300">
+<body class="bg-white text-on-background font-body-md text-body-md antialiased selection:bg-soft-gold selection:text-white transition-colors duration-300">
 <!-- TopNavBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-[#28241f]/95 backdrop-blur-md glass-nav shadow-[0_40px_40px_-15px_rgba(49,48,47,0.06)]">
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-md glass-nav shadow-[0_40px_40px_-15px_rgba(49,48,47,0.06)]">
 <div class="flex justify-between items-center gap-6 px-gutter py-3 max-w-container-max mx-auto">
 <a class="flex items-center shrink-0" href="#">
-<img alt="ALMAIA Logo" class="h-32 md:h-35 w-auto object-contain dark:brightness-125" src="img/almaia-logo.png"/>
+<img alt="ALMAIA Logo" class="h-28 md:h-32 w-auto object-contain dark:brightness-125" src="img/almaia-logo.png"/>
 </a>
-<nav class="hidden md:flex items-center space-x-8"><a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#inicio">Inicio</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#eventos">Eventos</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#testimonios">Testimonios</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#aliados">Aliados</a>
+<nav class="hidden md:flex flex-1 items-center justify-evenly px-8"><a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#inicio">Inicio</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#eventos">Eventos</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#testimonios">Testimonios</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#aliados">Aliados</a>
 </nav>
 <div class="flex items-center gap-3">
-<button aria-label="Cambiar modo claro/oscuro" class="theme-toggle w-11 h-11 flex items-center justify-center rounded-full border border-outline-variant dark:border-dark-border text-primary dark:text-gold-light hover:bg-light-beige/40 dark:hover:bg-dark-surface transition-all shrink-0" id="theme-toggle" type="button">
-<span class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light hidden">light_mode</span>
-</button>
-<a class="hidden md:inline-flex bg-gold-light text-charcoal font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md whitespace-nowrap" 
+<a class="hidden md:inline-flex bg-gold-light text-charcoal font-label-caps text-sm uppercase tracking-wider font-semibold px-7 py-3.5 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md whitespace-nowrap"
    href="https://calendly.com/team-almaia/30min"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/team-almaia/30min'}); return false;">
     Agenda una Reunión
@@ -144,54 +137,61 @@
 </button>
 </div>
 <nav class="mobile-menu hidden md:hidden flex-col px-gutter pb-6 gap-1 bg-surface dark:bg-dark-bg border-t border-outline-variant/20 dark:border-dark-border" id="mobile-menu">
-<a class="nav-link py-3 text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#inicio">Inicio</a>
-<a class="nav-link py-3 text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
-<a class="nav-link py-3 text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#eventos">Eventos</a>
-<a class="nav-link py-3 text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#testimonios">Testimonios</a>
-<a class="nav-link py-3 text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#aliados">Aliados</a>
+<a class="nav-link py-3 text-lg text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#inicio">Inicio</a>
+<a class="nav-link py-3 text-lg text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
+<a class="nav-link py-3 text-lg text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#eventos">Eventos</a>
+<a class="nav-link py-3 text-lg text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#testimonios">Testimonios</a>
+<a class="nav-link py-3 text-lg text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="#aliados">Aliados</a>
 <a class="bg-soft-gold text-white font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:bg-opacity-90 transition-all shadow-md text-center mt-2"
    href="https://calendly.com/team-almaia/30min"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/team-almaia/30min'}); return false;">Agenda una Reunión</a>
 </nav>
 </header>
-<main class="pt-24 md:pt-28">
+<main class="pt-28 md:pt-32">
 
 <!-- HERO -->
-<section class="w-full py-12" id="inicio">
-    
-    <div class="max-w-6xl mx-auto px-6">
-        
+<section class="w-full py-20 md:py-24 relative overflow-hidden" id="inicio">
+
+    <div class="max-w-6xl mx-auto px-6 relative">
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
 
             <!-- Texto de la izquierda -->
             <div class="flex flex-col justify-center reveal">
 
-                <h1 class="font-display-lg text-display-lg text-[#CDAE82] mb-6">
+                <h1 class="font-display-lg text-display-lg text-[#CDAE82] mb-6" style="text-shadow: 0 2px 20px rgba(0,0,0,0.15)">
                    Comunidad Empresarial Femenina
                 </h1>
 
-                <p class="font-body-lg text-body-lg leading-relaxed mb-4 text-on-surface-variant dark:text-dark-text-muted">
+                <p class="font-body-lg text-body-lg leading-relaxed mb-4 text-on-surface-variant dark:text-white/90">
                     Exclusiva para mujeres CEO y futuras CEO.
                 </p>
-                <p class="font-body-lg text-body-lg leading-relaxed mb-8 text-on-surface-variant dark:text-dark-text-muted">
+                <p class="font-body-lg text-body-lg leading-relaxed mb-8 text-on-surface-variant dark:text-white/90">
                     Conexiones estratégicas que impulsan negocios.
                 </p>
 
                 <div class="flex flex-wrap gap-4">
-                    <a href="#eventos" class="inline-flex items-center bg-gold-light text-charcoal font-label-caps text-label-caps uppercase px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md">
+                    <a href="#eventos" class="inline-flex items-center bg-[#CDAE82] text-[#31302F] font-label-caps text-label-caps uppercase px-8 py-4 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md">
                         Ver próximos eventos
                     </a>
                 </div>
             </div>
 
             <!-- Imagen de la derecha -->
-            <div class="w-full reveal reveal-delay-1">
-                <div class="relative w-full h-[260px] sm:h-[380px] md:h-[380px] rounded-2xl overflow-hidden ambient-shadow">
-                    <img
-                        src="img/img almaia people/1.png"
-                        alt="Foto local de ALMAIA"
-                        class="w-full h-full object-cover object-[center_80%]"
-                    >
+            <div class="w-full flex justify-center md:justify-end reveal reveal-delay-1">
+                <div class="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] md:w-[420px] md:h-[420px]">
+                    <!-- Anillos dorados concéntricos -->
+                    <div class="absolute -inset-5 rounded-full border border-[#987E5D]/55 dark:border-white/30"></div>
+                    <div class="absolute inset-0 rounded-full border border-[#987E5D]/85 dark:border-white/45"></div>
+
+                    <!-- Foto circular -->
+                    <div class="relative w-full h-full rounded-full overflow-hidden ambient-shadow">
+                        <img
+                            src="img/img almaia people/4.png"
+                            alt="Foto local de ALMAIA"
+                            class="w-full h-full object-cover object-[center_80%]"
+                        >
+                    </div>
                 </div>
             </div>
 
@@ -204,7 +204,7 @@
 <section class="py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="sobre-nosotras">
   <div class="bg-[#f4ebd6] dark:bg-dark-surface rounded-2xl p-12 md:p-16 ambient-shadow reveal">
     <div class="max-w-2xl mx-auto text-center">
-      <h2 class="font-headline-md text-headline-md text-primary dark:text-gold-light mb-6">Una comunidad para crecer</h2>
+      <h2 class="font-headline-md text-headline-md text-[#CDAE82] mb-6">Una comunidad para crecer</h2>
       <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-dark-text-muted mb-8">
         Donde las mujeres líderes convierten conexiones en crecimiento empresarial.
       </p>
@@ -217,41 +217,41 @@
 <!-- EVENTS -->
 <section class="py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="eventos">
 <div class="flex justify-between items-end mb-8 reveal">
-<h2 class="font-headline-md text-headline-md text-primary dark:text-gold-light">Próximos Eventos</h2>
-<a class="text-soft-gold dark:text-gold-light font-label-caps text-label-caps uppercase hover:underline" href="#">Ver todos</a>
+<h2 class="font-headline-md text-headline-md text-[#CDAE82]">Próximos Eventos</h2>
+<a class="text-soft-gold dark:text-white font-label-caps text-label-caps uppercase hover:underline" href="#">Ver todos</a>
 </div>
 <div class="grid md:grid-cols-2 gap-6">
 <!-- Event Card 1 -->
-<div class="bg-white dark:bg-dark-surface rounded-xl p-8 ambient-shadow border-t border-gold-light group relative overflow-hidden reveal">
-<div class="absolute top-0 right-0 bg-light-beige dark:bg-dark-surface-alt px-4 py-1 rounded-bl-lg font-label-caps text-label-caps text-primary dark:text-gold-light">Presencial</div>
+<div class="bg-[#f4ebd6] rounded-xl p-8 ambient-shadow gradient-border-t group relative overflow-hidden reveal">
+<div class="absolute top-0 right-0 bg-light-beige px-4 py-1 rounded-bl-lg font-label-caps text-label-caps text-primary">Presencial</div>
 <div class="space-y-4 mt-2">
-<h3 class="font-headline-sm text-headline-sm text-primary dark:text-dark-text group-hover:text-soft-gold dark:group-hover:text-gold-light transition-colors">Cumbre de Liderazgo Femenino 2024</h3>
-<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">calendar_today</span> 15 de Octubre, 2024</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">location_on</span> Club El Nogal, Bogotá</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">schedule</span> 8:00 AM - 6:00 PM</li>
+<h3 class="font-headline-sm text-headline-sm text-[#CDAE82] transition-colors">Cumbre de Liderazgo Femenino 2024</h3>
+<ul class="space-y-2 font-body-md text-body-md text-[#4d463b]">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">calendar_today</span> 15 de Octubre, 2024</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">location_on</span> Club El Nogal, Bogotá</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">schedule</span> 8:00 AM - 6:00 PM</li>
 </ul>
-<a class="inline-block border border-gold-light text-primary dark:text-gold-light font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:bg-light-beige/40 dark:hover:bg-dark-surface-alt hover:-translate-y-0.5 transition-all duration-300 w-full text-center mt-4" href="https://wa.me/573504693219?text=Hola%2C+quiero+inscribirme+a+la+Cumbre+de+Liderazgo+Femenino+2024." target="_blank" rel="noopener noreferrer">Inscribirme</a>
+<a class="inline-block border border-[#31302F] text-[#31302F] font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:bg-[#31302F]/10 hover:-translate-y-0.5 transition-all duration-300 w-full text-center mt-4" href="https://wa.me/573504693219?text=Hola%2C+quiero+inscribirme+a+la+Cumbre+de+Liderazgo+Femenino+2024." target="_blank" rel="noopener noreferrer">Inscribirme</a>
 </div>
 </div>
 <!-- Event Card 2 -->
-<div class="bg-white dark:bg-dark-surface rounded-xl p-8 ambient-shadow border-t border-gold-light group relative overflow-hidden reveal reveal-delay-1">
-<div class="absolute top-0 right-0 bg-light-beige dark:bg-dark-surface-alt px-4 py-1 rounded-bl-lg font-label-caps text-label-caps text-primary dark:text-gold-light">Virtual</div>
+<div class="bg-[#f4ebd6] rounded-xl p-8 ambient-shadow gradient-border-t group relative overflow-hidden reveal reveal-delay-1">
+<div class="absolute top-0 right-0 bg-light-beige px-4 py-1 rounded-bl-lg font-label-caps text-label-caps text-primary">Virtual</div>
 <div class="space-y-4 mt-2">
-<h3 class="font-headline-sm text-headline-sm text-primary dark:text-dark-text group-hover:text-soft-gold dark:group-hover:text-gold-light transition-colors">Masterclass: Finanzas Corporativas</h3>
-<ul class="space-y-2 font-body-md text-body-md text-on-surface-variant dark:text-dark-text-muted">
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">calendar_today</span> 22 de Octubre, 2024</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">videocam</span> Zoom / Plataforma ALMAIA</li>
-<li class="flex items-center gap-2"><span class="material-symbols-outlined text-gold-light">schedule</span> 10:00 AM - 12:00 PM</li>
+<h3 class="font-headline-sm text-headline-sm text-[#CDAE82] transition-colors">Masterclass: Finanzas Corporativas</h3>
+<ul class="space-y-2 font-body-md text-body-md text-[#4d463b]">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">calendar_today</span> 22 de Octubre, 2024</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">videocam</span> Zoom / Plataforma ALMAIA</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-[#31302F]">schedule</span> 10:00 AM - 12:00 PM</li>
 </ul>
-<a class="inline-block border border-gold-light text-primary dark:text-gold-light font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:bg-light-beige/40 dark:hover:bg-dark-surface-alt hover:-translate-y-0.5 transition-all duration-300 w-full text-center mt-4" href="https://wa.me/573504693219?text=Hola%2C+quiero+inscribirme+a+la+Masterclass%3A+Finanzas+Corporativas." target="_blank" rel="noopener noreferrer">Inscribirme</a>
+<a class="inline-block border border-[#31302F] text-[#31302F] font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:bg-[#31302F]/10 hover:-translate-y-0.5 transition-all duration-300 w-full text-center mt-4" href="https://wa.me/573504693219?text=Hola%2C+quiero+inscribirme+a+la+Masterclass%3A+Finanzas+Corporativas." target="_blank" rel="noopener noreferrer">Inscribirme</a>
 </div>
 </div>
 </div>
-</section><section class="py-section-gap-desktop px-gutter bg-light-beige/40 dark:bg-dark-surface" id="testimonios">
+</section><section class="py-section-gap-desktop px-gutter" id="testimonios">
 <div class="max-w-container-max mx-auto">
 <div class="text-center mb-10 reveal">
-<h2 class="font-display-lg text-display-lg text-soft-gold dark:text-gold-light">Testimonios</h2>
+<h2 class="font-display-lg text-display-lg text-[#CDAE82]">Testimonios</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 <!-- Testimonial 1 -->
@@ -304,28 +304,28 @@
 </section><!-- BRAND PARTNERS CAROUSEL -->
 <section class="py-section-gap-desktop px-gutter max-w-container-max mx-auto" id="aliados">
 <div class="text-center mb-8 reveal">
-<h2 class="font-display-lg text-display-lg text-soft-gold dark:text-gold-light">Marcas Aliadas</h2>
+<h2 class="font-display-lg text-display-lg text-[#CDAE82]">Marcas Aliadas</h2>
 </div>
 <div class="overflow-hidden relative">
 <div class="flex items-center gap-12 md:gap-24 animate-scroll whitespace-nowrap">
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Keller" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Keller.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Aitalent" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Aitalent.webp"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Dipy" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Dipy.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Scalexpert" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Scalexpert_dark.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Sofi" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Sofi.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Keller" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Keller.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Aitalent" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Aitalent.webp"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Dipy" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Dipy.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Scalexpert" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Scalexpert_dark.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Sofi" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Sofi.png"/></span></div>
 <!-- Duplicate for seamless loop -->
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Keller" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Keller.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Aitalent" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Aitalent.webp"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Dipy" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Dipy.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Scalexpert" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Scalexpert_dark.png"/></span></div>
-<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-[#CDAE82]/25 bg-[#E9D5A2]/25 dark:bg-dark-surface-alt px-6 py-5 shadow-sm"><img alt="Sofi" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Sofi.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Keller" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Keller.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Aitalent" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Aitalent.webp"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Dipy" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Dipy.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Scalexpert" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Scalexpert_dark.png"/></span></div>
+<div class="flex items-center justify-center w-56 md:w-72 shrink-0"><span class="flex items-center justify-center w-full rounded-xl border border-[#CDAE82]/40 dark:border-white/30 bg-white/12 dark:bg-white/20 backdrop-blur-sm px-6 py-5 shadow-sm"><img alt="Sofi" class="h-16 md:h-24 w-auto object-contain" src="img/aliados/Sofi.png"/></span></div>
 </div>
 </div>
 </section>
 <!-- SPONSOR CTA -->
-<section class="py-section-gap-desktop px-gutter bg-light-beige/40 dark:bg-dark-surface">
+<section class="py-section-gap-desktop px-gutter">
 <div class="max-w-3xl mx-auto text-center space-y-5 reveal">
-<h2 class="font-display-lg text-display-lg text-soft-gold dark:text-gold-light">¿Quieres ser patrocinador?</h2>
+<h2 class="font-display-lg text-display-lg text-[#CDAE82]">¿Quieres ser patrocinador?</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant dark:text-dark-text-muted">
             Conecta tu marca con una comunidad de mujeres líderes y empresarias.
         </p>
@@ -338,7 +338,7 @@
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-charcoal dark:bg-dark-bg text-[#d9d3ca] font-body-md text-body-md w-full py-section-gap-desktop relative z-10">
+<footer class="text-[#d9d3ca] font-body-md text-body-md w-full py-section-gap-desktop relative z-10" style="background: linear-gradient(rgba(30, 22, 12, 0.55), rgba(30, 22, 12, 0.55)), #987E5D;">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start px-gutter max-w-container-max mx-auto mb-8">
     
     <!-- Columna Logo -->
@@ -391,7 +391,7 @@
   </div>
 
   <!-- Bottom Bar -->
-  <div class="border-t border-[#4d453a] pt-8 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#a99f8f]">
+  <div class="gradient-border-t pt-8 px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-[#a99f8f]">
     <p>© 2024 ALMAIA. Todos los derechos reservados.</p>
     <div class="flex gap-6">
       <a class="hover:text-gold-light transition-colors" href="#">Términos y Condiciones</a>
@@ -446,20 +446,6 @@
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
   document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-
-  // Modo oscuro: alterna y persiste la preferencia del usuario
-  const themeToggle = document.getElementById("theme-toggle");
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("almaia-theme", isDark ? "dark" : "light");
-      themeToggle.querySelector(".theme-icon-dark").classList.toggle("hidden", isDark);
-      themeToggle.querySelector(".theme-icon-light").classList.toggle("hidden", !isDark);
-    });
-    const startedDark = document.documentElement.classList.contains("dark");
-    themeToggle.querySelector(".theme-icon-dark").classList.toggle("hidden", startedDark);
-    themeToggle.querySelector(".theme-icon-light").classList.toggle("hidden", !startedDark);
-  }
 
   // Menú móvil: alterna el panel de navegación en pantallas pequeñas
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");

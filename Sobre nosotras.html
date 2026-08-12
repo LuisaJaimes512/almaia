@@ -4,17 +4,6 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Sobre ALMAIA | Comunidad de Liderazgo Femenino</title>
-<script>
-  // Aplica el tema guardado antes del primer render para evitar parpadeos
-  (function () {
-    const forced = new URLSearchParams(location.search).get("theme");
-    const saved = forced || localStorage.getItem("almaia-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (saved ? saved === "dark" : prefersDark) {
-      document.documentElement.classList.add("dark");
-    }
-  })();
-</script>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;700&amp;family=Poppins:wght@400;500;700&amp;family=Raleway:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -34,10 +23,9 @@
         .dark body {
             background-image: linear-gradient(180deg, rgba(233, 213, 162, 0.10) 0%, rgba(49, 48, 47, 0.02) 100%);
         }
-        .dark header.fixed {
-            background: #28241f;
-            border-bottom: 1px solid rgba(233, 213, 162, 0.24);
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+        header.fixed {
+            border-bottom: 3px solid transparent;
+            border-image: linear-gradient(90deg, #CDAE82, #6E5836, #CDAE82) 1;
         }
         .glass-nav {
             backdrop-filter: blur(20px);
@@ -137,18 +125,14 @@
 <a class="flex items-center shrink-0" href="index.html">
 <img alt="ALMAIA Logo" class="h-28 md:h-32 w-auto object-contain dark:brightness-125" src="img/almaia-logo.png"/>
 </a>
-<nav class="hidden md:flex items-center space-x-8"><a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#inicio">Inicio</a>
-<a class="nav-link active-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#eventos">Eventos</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#testimonios">Testimonios</a>
-<a class="nav-link text-on-surface-variant dark:text-dark-text-muted hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#aliados">Aliados</a>
+<nav class="hidden md:flex flex-1 items-center justify-evenly px-8"><a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#inicio">Inicio</a>
+<a class="nav-link active-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="Sobre nosotras.html">Sobre Nosotras</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#eventos">Eventos</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#testimonios">Testimonios</a>
+<a class="nav-link text-xl text-on-surface-variant dark:text-white hover:text-primary dark:hover:text-gold-light transition-colors duration-300" href="index.html#aliados">Aliados</a>
 </nav>
 <div class="flex items-center gap-3">
-<button aria-label="Cambiar modo claro/oscuro" class="theme-toggle w-11 h-11 flex items-center justify-center rounded-full border border-outline-variant dark:border-dark-border text-primary dark:text-gold-light hover:bg-light-beige/40 dark:hover:bg-dark-surface transition-all shrink-0" id="theme-toggle" type="button">
-<span class="material-symbols-outlined theme-icon-dark">dark_mode</span>
-<span class="material-symbols-outlined theme-icon-light hidden">light_mode</span>
-</button>
-<a class="hidden md:inline-flex bg-gold-light text-charcoal font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md whitespace-nowrap" 
+<a class="hidden md:inline-flex bg-gold-light text-charcoal font-label-caps text-label-caps uppercase px-6 py-3 rounded-full hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 shadow-md whitespace-nowrap"
    href="https://calendly.com/team-almaia/30min"
    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/team-almaia/30min'}); return false;">
     Agenda una Reunión
@@ -171,13 +155,13 @@
 </nav>
 </header>
 <!-- Hero Section -->
-<header class="relative pt-36 pb-14 md:pt-44 md:pb-20 overflow-hidden transition-all duration-1000 opacity-100">
-<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center reveal">
-<span class="font-label-caps text-label-caps text-primary dark:text-gold-light mb-4 block tracking-[0.3em] uppercase">Excelencia &amp; Liderazgo</span>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface dark:text-dark-text mb-5 max-w-4xl mx-auto">
-                Sobre ALMAIA
+<header class="relative pt-48 pb-20 md:pt-56 md:pb-28 overflow-hidden transition-all duration-1000 opacity-100">
+<div class="max-w-container-max mx-auto px-gutter relative z-10 text-center">
+<h1 class="font-display-lg text-[44px] md:text-[56px] text-[#CDAE82] mb-5 max-w-4xl mx-auto">
+                SOBRE ALMAIA
             </h1>
-<p class="font-body-lg text-body-lg text-secondary dark:text-dark-text-muted max-w-2xl mx-auto leading-relaxed">
+<span class="font-label-caps text-sm text-primary dark:text-gold-light mb-4 block tracking-[0.3em] uppercase">Excelencia &amp; Liderazgo</span>
+<p class="font-body-lg text-xl text-secondary dark:text-dark-text-muted max-w-2xl mx-auto leading-relaxed">
                 Nuestra misión es conectar, empoderar y proyectar a las mujeres líderes que están redefiniendo el futuro de los negocios. Creamos un ecosistema de alto impacto donde el talento y la ambición encuentran su hogar.
             </p>
 </div>
@@ -191,9 +175,9 @@
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 <!-- Benefit 1 -->
-<div class="flip-card h-64 reveal" tabindex="0">
+<div class="flip-card h-64" tabindex="0">
 <div class="flip-card-inner">
-<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t border-primary-container dark:border-gold-light/30">
+<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t-4 border-primary-container dark:border-gold-light/30">
 <span class="material-symbols-outlined text-4xl mb-4">workspace_premium</span>
 <h3 class="font-headline-sm text-headline-sm text-primary dark:text-gold-light">Mentoría</h3>
 </div>
@@ -203,9 +187,9 @@
 </div>
 </div>
 <!-- Benefit 2 -->
-<div class="flip-card h-64 reveal reveal-delay-1" tabindex="0">
+<div class="flip-card h-64" tabindex="0">
 <div class="flip-card-inner">
-<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t border-primary-container dark:border-gold-light/30">
+<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t-4 border-primary-container dark:border-gold-light/30">
 <span class="material-symbols-outlined text-4xl mb-4">hub</span>
 <h3 class="font-headline-sm text-headline-sm text-primary dark:text-gold-light">Networking</h3>
 </div>
@@ -215,9 +199,9 @@
 </div>
 </div>
 <!-- Benefit 3 -->
-<div class="flip-card h-64 reveal reveal-delay-2" tabindex="0">
+<div class="flip-card h-64" tabindex="0">
 <div class="flip-card-inner">
-<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t border-primary-container dark:border-gold-light/30">
+<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t-4 border-primary-container dark:border-gold-light/30">
 <span class="material-symbols-outlined text-4xl mb-4">auto_stories</span>
 <h3 class="font-headline-sm text-headline-sm text-primary dark:text-gold-light">Formación</h3>
 </div>
@@ -227,9 +211,9 @@
 </div>
 </div>
 <!-- Benefit 4 -->
-<div class="flip-card h-64 reveal reveal-delay-3" tabindex="0">
+<div class="flip-card h-64" tabindex="0">
 <div class="flip-card-inner">
-<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t border-primary-container dark:border-gold-light/30">
+<div class="flip-card-front p-8 bg-white dark:bg-dark-surface-alt rounded-xl shadow-[40px_40px_40px_rgba(0,0,0,0.04)] border-t-4 border-primary-container dark:border-gold-light/30">
 <span class="material-symbols-outlined text-4xl mb-4">groups</span>
 <h3 class="font-headline-sm text-headline-sm text-primary dark:text-gold-light">Comunidad</h3>
 </div>
@@ -247,7 +231,7 @@
 <div class="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end justify-between gap-6 reveal">
 <div class="max-w-2xl">
 <span class="font-label-caps text-label-caps text-primary dark:text-gold-light mb-4 block tracking-widest">VISIÓN Y LIDERAZGO</span>
-<h2 class="font-headline-md text-headline-md text-on-surface dark:text-dark-text">Las mentes detrás de ALMAIA</h2>
+<h2 class="font-headline-md text-headline-md text-[#CDAE82]">Las mentes detrás de ALMAIA</h2>
 </div>
 <div class="w-24 h-px bg-primary-container dark:bg-gold-light/40 hidden md:block"></div>
 </div>
@@ -302,7 +286,7 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-charcoal dark:bg-dark-bg text-[#d9d3ca] font-body-md text-body-md w-full pt-12 pb-8 relative z-10 block clear-both">
+<footer class="text-[#d9d3ca] font-body-md text-body-md w-full py-section-gap-desktop relative z-10 block clear-both" style="background: linear-gradient(rgba(30, 22, 12, 0.55), rgba(30, 22, 12, 0.55)), #987E5D;">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start px-gutter max-w-container-max mx-auto mb-12">
     
     <!-- Columna Logo -->
@@ -386,20 +370,6 @@
     });
   }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
   document.querySelectorAll(".reveal").forEach(el => revealObserver.observe(el));
-
-  // Modo oscuro: alterna y persiste la preferencia del usuario
-  const themeToggle = document.getElementById("theme-toggle");
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = document.documentElement.classList.toggle("dark");
-      localStorage.setItem("almaia-theme", isDark ? "dark" : "light");
-      themeToggle.querySelector(".theme-icon-dark").classList.toggle("hidden", isDark);
-      themeToggle.querySelector(".theme-icon-light").classList.toggle("hidden", !isDark);
-    });
-    const startedDark = document.documentElement.classList.contains("dark");
-    themeToggle.querySelector(".theme-icon-dark").classList.toggle("hidden", startedDark);
-    themeToggle.querySelector(".theme-icon-light").classList.toggle("hidden", !startedDark);
-  }
 
   // Menú móvil: alterna el panel de navegación en pantallas pequeñas
   const mobileMenuBtn = document.getElementById("mobile-menu-btn");
