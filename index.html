@@ -41,6 +41,12 @@
             background-clip: text;
             color: transparent;
         }
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: clamp(34px, 4.5vw, 62px);
+                line-height: 1.1;
+            }
+        }
         body {
             background: #FFFFFF;
         }
@@ -189,7 +195,7 @@
             <!-- Texto de la izquierda -->
             <div class="flex flex-col justify-center reveal">
 
-                <h1 class="font-display-lg text-display-lg text-[#C8A89B] mb-4 md:mb-4 ml-6 md:ml-10 text-[26px] leading-tight md:text-[62px] md:leading-[1.1]" style="text-shadow: 0 2px 20px rgba(0,0,0,0.15)">
+                <h1 class="font-display-lg text-display-lg text-[#C8A89B] mb-4 md:mb-4 ml-6 md:ml-10 text-[26px] leading-tight hero-title" style="text-shadow: 0 2px 20px rgba(0,0,0,0.15)">
                    <span class="text-[1.2em]">C</span>omunidad <span class="text-[1.2em]">E</span>mpresarial <br class="hidden md:block"> <span class="text-[1.2em]">F</span>emenina
                 </h1>
 
